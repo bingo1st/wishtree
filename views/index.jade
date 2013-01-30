@@ -1,0 +1,65 @@
+extends layout
+
+block content
+  .hero-unit
+    if user
+      h1 欢迎#{user.name}来到 Wish Tree
+    else
+      h1 欢迎来到 强哥的 Wish Tree
+    br
+    p 强哥的 Wish Tree 是一个基于 Node.js 的 Wish Tree
+    if !user
+      a.btn.btn-primary.btn-large(href="/login") 登录
+      &nbsp;&nbsp;
+      a.btn.btn-primary.btn-large(href="/reg") 立即注册
+   if user
+    include ./say.jade
+  .row
+      include ./posts.jade
+      .span4
+        h3
+          a(href="#") Rex
+          span  Wish
+        p
+          small Tuesday, January 29, 2013
+        p 桑帝 求你赐我一个妞吧
+      .span4
+        h3
+          a(href="#") 灰灰
+          span  Wish
+        p
+          small Tuesday, January 29, 2013
+        p 能给配个机器人不！？
+      .span4
+        h3
+          a(href="#") Comicsand
+          span  Wish
+        p
+          small Tuesday, January 29, 2013
+        p %#￥#%&…… dapibus ac facilisis in, egestas eget quam.fellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus
+      .span4
+        h3
+          a(href="#") 小90
+          span  Wish
+        p
+          small Tuesday, January 29, 2013
+        p 求汉纸，或者妹纸...
+      .span4
+        h3
+          a(href="#") 士兵
+          span  Wish
+        p
+          small Tuesday, January 29, 2013
+        p 今天晚上坐地铁 还可以碰到那个妹子.
+      .span4
+        h3
+          a(href="#") 浪浪
+          span  Wish
+        p
+          small Tuesday, January 29, 2013
+        p 求年终奖，求iPhone8.
+  .page 
+    a(href="#")(title="上一页")  < 
+    span 第 1 页 
+    a(href="#")(title="下一页")  >
+      

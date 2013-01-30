@@ -1,0 +1,38 @@
+doctype 5
+html
+  head
+    title= title
+    meta(name="viewport")(content="width=device-width,initial-scale=1.0,minimum-scale=1.0,max-scale=1.0")
+    link(href="/stylesheets/bootstrap.css")(rel="stylesheet")
+    link(href="/stylesheets/bootstrap-responsive.css")(rel="stylesheet")
+    link(href="/stylesheets/style.css")(rel="stylesheet")
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a(data-toggle="collapse")(data-target=".nav-collapse").btn.btn-navbar
+          a.brand(href="/") Wish Tree
+          .nav-collapse
+            ul.nav
+              li.active
+                a(href="/") 首页
+                if !user
+                  li
+                    a(href="/login") 登入
+                  li
+                    a(href="/reg") 注册
+                else 
+                  li
+                    a(href="/logout") 退出
+    #container.container
+      if success
+        .alert.alert-success #{success}
+      if error
+        .alert.alert-error #{error}
+      block content
+    hr
+    footer
+      p
+        a(href="http://www.renren.com/youbingsong")(target="_blank") Apollo &copy;2013
+  script(src="/javascripts/jquery.js")
+  script(src="/javascripts/bootstrap.min.js")

@@ -1,0 +1,8 @@
+each post, i in posts
+  .span4
+    h3
+      a(href="/u/#{post.user}") #{post.user}
+      span  Wish
+    p
+      small #{post.time}
+    p(style="text-shadow: 0px 1px 0px rgba(255,255,255,.4);") #{post.post}
